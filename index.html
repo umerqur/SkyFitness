@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkyFitness | Mississauga Gym | Free Trial</title>
+  <meta name="description" content="SkyFitness Mississauga. Premium strength training. Claim your free 3-day pass now." />
+  <style>
+    :root {
+      /* Palette */
+      --bg: #050505;
+      --surface: #121212;
+      --surface-hover: #1a1a1a;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --text-muted: #888888;
+
+      /* The "Volt" Accent - High conversion color */
+      --brand: #ccff00;
+      --brand-hover: #b3e600;
+      --on-brand: #000000;
+
+      /* Spacing & sizing */
+      --radius: 16px;
+      --max-w: 1200px;
+      --nav-height: 70px;
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; outline: none; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* Typography */
+    h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+    h1 { font-size: clamp(40px, 8vw, 72px); text-transform: uppercase; }
+    h2 { font-size: clamp(28px, 5vw, 42px); }
+    h3 { font-size: 20px; }
+    p { margin: 0; color: var(--text-muted); font-size: 16px; }
+    a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+    /* Utility */
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .flex { display: flex; align-items: center; }
+    .grid { display: grid; gap: 20px; }
+    .text-brand { color: var(--brand); }
+    .hidden-mobile { display: block; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      padding: 0 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: var(--on-brand);
+      border: none;
+    }
+    .btn-primary:hover {
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(204, 255, 0, 0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--text);
+      background: var(--surface);
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      height: 100%;
+      justify-content: space-between;
+    }
+    .logo { font-weight: 900; font-size: 22px; letter-spacing: -0.05em; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--brand); }
+    .nav-links { gap: 30px; font-weight: 500; font-size: 14px; }
+    .nav-links a:hover { color: var(--brand); }
+
+    /* Hero Section */
+    .hero {
+      padding: 140px 0 80px;
+    }
+    .hero-grid {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(204, 255, 0, 0.1);
+      color: var(--brand);
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero-content p {
+      margin: 24px 0 32px;
+      font-size: 18px;
+      max-width: 90%;
+    }
+    .trust-badges {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .trust-item b { display: block; color: var(--text); font-size: 16px; margin-bottom: 2px;}
+
+    /* Modern Bento Grid Images */
+    .hero-visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 12px;
+    }
+    .bento-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      background: var(--surface);
+      filter: grayscale(100%) contrast(1.1);
+      transition: 0.3s;
+    }
+    .bento-img:hover { filter: grayscale(0%); }
+    .bento-large { grid-column: span 2; }
+
+    /* Features / Value Prop */
+    .section { padding: 80px 0; }
+    .section-head { margin-bottom: 50px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .feature-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: var(--radius);
+      transition: 0.3s;
+    }
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+    .icon {
+      width: 48px; height: 48px;
+      background: var(--brand);
+      color: var(--on-brand);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    /* Conversion Form Section */
+    .offer-container {
+      background: radial-gradient(circle at top right, rgba(204, 255, 0, 0.15), transparent 40%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    .offer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .form-box {
+      background: #000;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .input-group { margin-bottom: 16px; }
+    .input-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    input, select {
+      width: 100%;
+      height: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0 16px;
+      color: white;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+    input:focus, select:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 1px var(--brand);
+    }
+
+    /* Location Card (Map Replacement) */
+    .location-banner {
+      margin-top: 20px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .loc-details b { display: block; color: white; font-size: 18px; }
+    .loc-details span { color: var(--text-muted); font-size: 14px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 0;
+      margin-top: 80px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .footer-flex { justify-content: space-between; align-items: flex-start; }
+
+    /* Mobile Sticky Bar */
+    .sticky-mobile {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 16px;
+      background: rgba(5,5,5,0.9);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      z-index: 99;
+      display: none;
+    }
+    .sticky-mobile .btn { width: 100%; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .offer-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .bento-large { grid-column: span 1; }
+      .hero-visual { grid-template-columns: 1fr; }
+      .offer-container { padding: 24px; }
+      .location-banner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .sticky-mobile { display: block; }
+      footer { padding-bottom: 100px; } /* space for sticky bar */
+      h1 { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap flex nav-inner">
+      <a href="#" class="logo">
+        SKY<span>FITNESS</span>
+      </a>
+      <nav class="nav-links flex">
+        <a href="#benefits">Why Sky</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="flex" style="gap:10px">
+        <a href="tel:9055699991" class="btn btn-outline hidden-mobile">905-569-9991</a>
+        <a href="#claim" class="btn btn-primary">Get 3 Day Pass</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid hero-grid">
+        <div class="hero-content">
+          <span class="tag">Mississauga's Premier Training Facility</span>
+          <h1>Stop Exercising.<br><span class="text-brand">Start Training.</span></h1>
+          <p>
+            The atmosphere you need to actually see results. Professional equipment,
+            expert coaching, and zero distractions.
+          </p>
+          <div class="flex" style="gap:16px; flex-wrap:wrap;">
+            <a href="#claim" class="btn btn-primary">Claim Free 3 Day Pass</a>
+            <a href="#benefits" class="btn btn-outline">View Programs</a>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-item">
+              <b>4.9/5 Rating</b>
+              <span>On Google Reviews</span>
+            </div>
+            <div class="trust-item">
+              <b>Open 18Hrs</b>
+              <span>Daily Access</span>
+            </div>
+            <div class="trust-item">
+              <b>Certified</b>
+              <span>Expert Coaches</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" class="bento-img bento-large" alt="Gym Interior">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=400&q=80" class="bento-img" alt="Weights">
+          <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=400&q=80" class="bento-img" alt="Athlete">
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for <span class="text-brand">Progress</span></h2>
+          <p>We stripped away the fluff. No juice bars, no gimmicks. Just the best equipment in Mississauga.</p>
+        </div>
+        <div class="grid feature-grid">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Functional Training</h3>
+            <p>Turf zones, sleds, kettlebells, and rigs designed for athletic performance and real-world strength.</p>
+          </div>
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Heavy Strength</h3>
+            <p>Multiple squat racks, deadlift platforms, and calibrated plates. You never have to wait to lift.</p>
+          </div>
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>Personal Coaching</h3>
+            <p>Don't guess. Our certified trainers build custom plans to hit your specific physique goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="claim" class="section">
+      <div class="wrap">
+        <div class="offer-container">
+          <div class="grid offer-grid">
+
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <span class="tag">Limited Time Offer</span>
+              <h2>Experience the difference for <span class="text-brand">Free</span>.</h2>
+              <p style="margin-top:16px;">
+                Come in, meet the team, and get a full workout in. We don't do high-pressure sales tactics. The gym sells itself.
+              </p>
+
+              <ul style="margin:24px 0; padding-left:20px; color:var(--text-muted);">
+                <li style="margin-bottom:10px">Full access to all equipment</li>
+                <li style="margin-bottom:10px">Complimentary form check</li>
+                <li>No credit card required</li>
+              </ul>
+
+              <div id="location" class="location-banner">
+                <div class="loc-details">
+                  <b>SkyFitness Mississauga</b>
+                  <span>3345 Laird Rd, Unit 3</span>
+                </div>
+                <a href="https://maps.google.com/?q=3345+Laird+Rd,+Mississauga" target="_blank" class="btn btn-outline" style="height:40px; font-size:13px;">
+                  Get Directions &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="form-box">
+              <form id="trialForm">
+                <div class="input-group">
+                  <label>Full Name</label>
+                  <input type="text" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="input-group">
+                  <label>Phone Number</label>
+                  <input type="tel" name="phone" placeholder="(905) 555-0123" required>
+                </div>
+                <div class="input-group">
+                  <label>Primary Goal</label>
+                  <select name="goal">
+                    <option>Building Muscle</option>
+                    <option>Weight Loss</option>
+                    <option>Athletic Performance</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Activate 3-Day Pass</button>
+                <p style="font-size:12px; margin-top:16px; text-align:center;">
+                  Valid for local residents only. Must be 18+.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap flex footer-flex">
+      <div>
+        <a href="#" class="logo" style="font-size:18px;">SKY<span>FITNESS</span></a>
+        <p style="font-size:13px; margin-top:8px;">&copy; 2026 SkyFitness Inc.</p>
+      </div>
+      <div style="text-align:right;">
+        <a href="mailto:info@skyfitness.ca" style="display:block; margin-bottom:6px;">info@skyfitness.ca</a>
+        <a href="tel:9055699991">905-569-9991</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile">
+    <a href="#claim" class="btn btn-primary">Get 3 Day Pass</a>
+  </div>
+
+  <script>
+    // Smooth Scroll Script
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Form Handler Logic
+    document.getElementById('trialForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      const originalText = btn.innerText;
+
+      btn.innerText = "Processing...";
+      btn.style.opacity = "0.7";
+
+      // Simulate API call
+      setTimeout(() => {
+        const formData = new FormData(this);
+        const name = formData.get('name');
+
+        // Success State
+        btn.innerText = "Check your email!";
+        btn.style.background = "#fff";
+        btn.style.color = "#000";
+
+        alert(`Thanks ${name}! This is a demo. In a real site, your pass would be emailed to you.`);
+
+        // Reset after 3 seconds
+        setTimeout(() => {
+          btn.innerText = "Sent";
+        }, 2000);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
