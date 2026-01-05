@@ -203,6 +203,32 @@
       font-size: 36px;
     }
 
+    /* Pricing Labels */
+    .pricing-label {
+      width: auto;
+      height: auto;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .pricing-label.best-value {
+      background: rgba(204, 255, 0, 0.1);
+      border-color: rgba(204, 255, 0, 0.3);
+      color: var(--brand);
+      font-weight: 700;
+    }
+
     /* Conversion Form Section */
     .offer-container {
       background: radial-gradient(circle at top right, rgba(204, 255, 0, 0.15), transparent 40%), var(--surface);
@@ -388,7 +414,7 @@
         </div>
         <div class="grid feature-grid">
           <div class="card">
-            <div class="icon">$</div>
+            <div class="pricing-label">Most Flexible</div>
             <h3>Monthly Membership</h3>
             <p style="font-size:32px; font-weight:800; color:var(--brand); margin:16px 0;">$79.99</p>
             <ul style="padding-left:20px; color:var(--text-muted); margin:16px 0;">
@@ -399,7 +425,7 @@
             <a href="https://app.glofox.com/portal/#/branch/64a56f3b3244c8253103c7b9/memberships/64a6db3640e717eb9f0c9301/plan/1688656501285/buy" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; margin-top:16px;">Join Now</a>
           </div>
           <div class="card">
-            <div class="icon">$$</div>
+            <div class="pricing-label best-value">Best Value</div>
             <h3>Annual Membership</h3>
             <p style="font-size:32px; font-weight:800; color:var(--brand); margin:16px 0;">$69.99<span style="font-size:16px; color:var(--text-muted);">/mo</span></p>
             <ul style="padding-left:20px; color:var(--text-muted); margin:16px 0;">
@@ -411,7 +437,7 @@
             <p style="font-size:12px; color:var(--text-muted); margin-top:12px; text-align:center;">You may need to select your plan inside the SkyFitness portal.</p>
           </div>
           <div class="card">
-            <div class="icon">$$$</div>
+            <div class="pricing-label">Pay Once</div>
             <h3>Annual (Paid in Full)</h3>
             <p style="font-size:32px; font-weight:800; color:var(--brand); margin:16px 0;">$695</p>
             <ul style="padding-left:20px; color:var(--text-muted); margin:16px 0;">
