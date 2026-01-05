@@ -317,7 +317,23 @@
       .offer-container { padding: 24px; }
       .location-banner { flex-direction: column; align-items: flex-start; gap: 16px; }
       .sticky-mobile { display: block; }
-      footer { padding-bottom: 100px; } /* space for sticky bar */
+      footer {
+        padding-bottom: 100px; /* space for sticky bar */
+        color: rgba(255,255,255,0.72);
+        margin-top: 40px;
+      }
+      footer a { color: rgba(255,255,255,0.85); }
+      .footer-flex {
+        flex-direction: column;
+        gap: 18px;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .footer-flex > div:last-child { text-align: left !important; }
+      .footer-flex .logo img {
+        transform: none;
+        height: 42px;
+      }
       h1 { font-size: 48px; }
     }
   </style>
