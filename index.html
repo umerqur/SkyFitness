@@ -384,8 +384,7 @@
               <li style="margin-bottom:10px">Top-of-the-line equipment</li>
               <li>No long-term contract</li>
             </ul>
-            <!-- TODO: replace with Glofox membership join URL -->
-            <a href="https://app.glofox.com/" class="btn btn-primary" style="width:100%; margin-top:16px;">Join Now</a>
+            <a href="https://app.glofox.com/portal/#/branch/64a56f3b3244c8253103c7b9/memberships/64a6db3640e717eb9f0c9301/plan/1688656501285/buy" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; margin-top:16px;">Join Now</a>
           </div>
           <div class="card">
             <div class="icon">$$</div>
@@ -396,8 +395,8 @@
               <li style="margin-bottom:10px">12-month commitment</li>
               <li>Best monthly rate</li>
             </ul>
-            <!-- TODO: replace with Glofox membership join URL -->
-            <a href="https://app.glofox.com/" class="btn btn-primary" style="width:100%; margin-top:16px;">Join Now</a>
+            <a href="https://app.glofox.com/portal/#/branch/64a56f3b3244c8253103c7b9/memberships/64a6db3640e717eb9f0c9301/plan/1709821839329/buy" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; margin-top:16px;">Open Membership Portal</a>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:12px; text-align:center;">You may need to select your plan inside the SkyFitness portal.</p>
           </div>
           <div class="card">
             <div class="icon">$$$</div>
@@ -408,8 +407,10 @@
               <li style="margin-bottom:10px">No monthly billing</li>
               <li>Annual renewal</li>
             </ul>
-            <!-- TODO: replace with Glofox membership join URL -->
-            <a href="https://app.glofox.com/" class="btn btn-primary" style="width:100%; margin-top:16px;">Join Now</a>
+            <!-- TODO: replace with exact $695 Glofox plan URL -->
+            <a href="https://app.glofox.com/" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; margin-top:16px;">Open Membership Portal</a>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:12px; text-align:center;">You may need to select your plan inside the SkyFitness portal.</p>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:8px; text-align:center; font-style:italic;">Annual paid-in-full link coming soon.</p>
           </div>
         </div>
       </div>
@@ -538,31 +539,13 @@
     });
 
     // Form Handler Logic
+    // TODO: Replace with exact 3-day pass Glofox URL
     document.getElementById('trialForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = this.querySelector('button');
-      const originalText = btn.innerText;
 
-      btn.innerText = "Processing...";
-      btn.style.opacity = "0.7";
-
-      // Simulate API call
-      setTimeout(() => {
-        const formData = new FormData(this);
-        const name = formData.get('name');
-
-        // Success State
-        btn.innerText = "Check your email!";
-        btn.style.background = "#fff";
-        btn.style.color = "#000";
-
-        alert(`Thanks ${name}! This is a demo. In a real site, your pass would be emailed to you.`);
-
-        // Reset after 3 seconds
-        setTimeout(() => {
-          btn.innerText = "Sent";
-        }, 2000);
-      }, 1000);
+      // Redirect to Glofox free pass / trial URL
+      // TODO: Replace placeholder URL with actual Glofox 3-day pass URL when available
+      window.open('https://app.glofox.com/', '_blank');
     });
   </script>
 </body>
