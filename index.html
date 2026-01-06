@@ -52,6 +52,7 @@
     .grid { display: grid; gap: 20px; }
     .text-brand { color: var(--brand); }
     .hidden-mobile { display: block; }
+    .visible-mobile { display: none; }
 
     /* Buttons */
     .btn {
@@ -312,6 +313,8 @@
     @media (max-width: 900px) {
       .hero-grid, .offer-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .hidden-mobile { display: none; }
+      .visible-mobile { display: inline-flex; }
       .bento-large { grid-column: span 1; }
       .hero-visual { grid-template-columns: 1fr; }
       .offer-container { padding: 24px; }
@@ -352,7 +355,8 @@
       </nav>
       <div class="flex" style="gap:10px">
         <a href="tel:9055699991" class="btn btn-outline hidden-mobile">905-569-9991</a>
-        <a href="https://skyfitness.ca/3-day-trial/claim" target="_blank" rel="noopener" class="btn btn-primary">Get 3 Day Pass</a>
+        <a href="tel:9055699991" class="btn btn-primary visible-mobile">📞 Call Now</a>
+        <a href="https://skyfitness.ca/3-day-trial/claim" target="_blank" rel="noopener" class="btn btn-primary hidden-mobile">Get 3 Day Pass</a>
       </div>
     </div>
   </header>
