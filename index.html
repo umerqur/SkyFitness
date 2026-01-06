@@ -121,6 +121,14 @@
     .logo span { color: var(--brand); }
     .nav-links { gap: 30px; font-weight: 500; font-size: 14px; }
     .nav-links a:hover { color: var(--brand); }
+    .phone-text {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+    }
 
     /* Hero Section */
     .hero {
@@ -354,7 +362,7 @@
         <a href="#training">Training</a>
       </nav>
       <div class="flex" style="gap:10px">
-        <a href="tel:9055699991" class="btn btn-outline hidden-mobile">905-569-9991</a>
+        <span class="phone-text hidden-mobile">905-569-9991</span>
         <a href="tel:9055699991" class="btn btn-primary visible-mobile">📞 Call Now</a>
         <a href="https://skyfitness.ca/3-day-trial/claim" target="_blank" rel="noopener" class="btn btn-primary hidden-mobile">Get 3 Day Pass</a>
       </div>
