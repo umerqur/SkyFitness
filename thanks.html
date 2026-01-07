@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | SkyFitness</title>
+  <meta name="description" content="Thank you for claiming your free 3-day pass at SkyFitness Mississauga." />
+  <style>
+    :root {
+      --bg: #050505;
+      --surface: #121212;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --text-muted: #888888;
+      --brand: #ccff00;
+      --brand-hover: #b3e600;
+      --on-brand: #000000;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 60px 40px;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(204, 255, 0, 0.1);
+      border: 2px solid var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 40px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand { color: var(--brand); }
+
+    p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .info-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+      text-align: left;
+    }
+
+    .info-box h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .info-box p {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      padding: 0 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      background: var(--brand);
+      color: var(--on-brand);
+      border: none;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(204, 255, 0, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkmark">✓</div>
+    <h1>You're <span class="brand">In!</span></h1>
+    <p>Thank you for claiming your free 3-day pass.</p>
+    <p>Our team will reach out to you shortly to schedule your first visit.</p>
+
+    <div class="info-box">
+      <h3>What's Next?</h3>
+      <p><strong>1. Check your email</strong> - We'll send you confirmation details</p>
+      <p><strong>2. Expect a call</strong> - Our team will contact you within 24 hours</p>
+      <p><strong>3. Get ready to train</strong> - Bring workout clothes and a water bottle</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Location</h3>
+      <p><strong>SkyFitness Mississauga</strong></p>
+      <p>3345 Laird Rd, Unit 3</p>
+      <p>Mississauga, Ontario</p>
+      <p style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:9055699991" style="color:var(--brand); text-decoration:none;">905-569-9991</a></p>
+    </div>
+
+    <a href="/" class="btn">Return to Home</a>
+  </div>
+</body>
+</html>
